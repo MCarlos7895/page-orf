@@ -331,3 +331,221 @@ body {
 #form-status.show {
   opacity: 1;
 }
+
+/* Media Queries para telas pequenas (smartphones e tablets pequenos) */
+@media (max-width: 768px) {
+  /* HEADER */
+  .container-header {
+    flex-direction: column; /* Empilha logo e menu */
+    height: auto; /* Altura automática para se ajustar ao conteúdo */
+    padding: 15px 20px; /* Espaçamento interno */
+    position: static; /* Remove o header fixo em telas pequenas */
+    box-shadow: none; /* Remove a sombra */
+    justify-content: center; /* Centraliza verticalmente o conteúdo */
+  }
+
+  /* Ajuste para remover o padding-top do body, já que o header não é fixo */
+  body {
+    padding-top: 0; 
+  }
+
+  .logo-link.logo {
+    margin-left: 0; /* Remove a margem esquerda extra da logo */
+    text-align: center; /* Centraliza a logo */
+    width: 100%; /* Garante que a logo ocupe a largura total */
+  }
+
+  .logo img {
+    margin: 0 auto; /* Centraliza a imagem da logo */
+    height: 40px; /* Ajusta o tamanho da logo */
+  }
+
+  .container-header nav {
+    width: 100%; /* Ocupa a largura total para o menu */
+    padding-right: 0; /* Remove padding lateral */
+    margin-top: 15px; /* Espaçamento entre logo e menu */
+  }
+
+  .container-header ul {
+    flex-direction: column; /* Empilha os itens do menu */
+    gap: 10px; /* Espaçamento entre os itens */
+    text-align: center; /* Centraliza os itens do menu */
+    align-items: center; /* Centraliza os links dentro do nav */
+  }
+
+  .container-header ul li a {
+    padding: 5px 0; /* Ajusta o padding dos links */
+  }
+
+  /* HERO SECTION */
+  .hero {
+    grid-template-columns: 1fr; /* Uma única coluna para mobile */
+    gap: 30px; /* Espaçamento entre os elementos */
+    padding: 20px; /* Padding geral para a seção */
+    text-align: center; /* Centraliza o texto */
+  }
+
+  h1 {
+    font-size: 2em; /* Tamanho da fonte do título principal */
+    margin-bottom: 15px;
+  }
+
+  .lead {
+    font-size: 0.9em; /* Tamanho da fonte do parágrafo */
+  }
+
+  .cta-row {
+    margin-top: 20px; /* Espaço acima do botão */
+  }
+
+  .hero-portrait {
+    height: auto; /* Altura automática para a imagem */
+    min-height: 250px; /* Altura mínima para não sumir */
+    width: 100%; /* Garante que a imagem ocupe a largura total */
+  }
+
+  .hero-portrait img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* Garante que a imagem se ajuste sem cortar */
+  }
+
+  .badge {
+    position: static; /* Remove o posicionamento absoluto */
+    transform: none; /* Remove a transformação */
+    margin-top: 15px; /* Espaçamento entre a imagem e o badge */
+    font-size: 0.9em;
+  }
+
+  /* ESPECIALIDADES SECTION */
+  .cards {
+    grid-template-columns: 1fr; /* Uma coluna para os cards */
+    padding: 0 20px;
+  }
+
+  .card {
+    text-align: center; /* Centraliza o texto dos cards */
+  }
+
+  .card .icon {
+    margin: 0 auto 10px auto; /* Centraliza o ícone */
+  }
+
+  /* CONTACT SECTION */
+  .contact {
+    grid-template-columns: 1fr; /* Uma única coluna para mobile */
+    gap: 30px;
+    padding: 20px;
+    text-align: center; /* Centraliza o texto */
+    height: auto;
+  }
+
+  .contact h2 {
+    font-size: 1.8em;
+  }
+
+  .contact p {
+    font-size: 0.9em;
+  }
+
+  /* IFRAME DO MAPA */
+  .contact iframe {
+    width: 100%; /* Garante que o mapa ocupe a largura total */
+    height: 300px; /* Altura fixa para o mapa */
+    margin: 20px 0; /* Espaçamento */
+  }
+
+  /* FORMULÁRIO DE CONTATO */
+  .contact-form {
+    padding: 20px;
+    width: 100%; /* Ocupa a largura total */
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%; /* Campos de formulário ocupam a largura total */
+    box-sizing: border-box; /* Garante que padding e border não aumentem a largura */
+  }
+
+  .contact-form button {
+    width: 100%; /* Botão ocupa a largura total */
+    align-self: center; /* Centraliza o botão */
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 20px;
+  }
+
+  .footer-grid {
+    flex-direction: column; /* Empilha os elementos do rodapé */
+    gap: 20px;
+    text-align: center; /* Centraliza o texto */
+  }
+
+  .logo-footer {
+    margin-bottom: 10px;
+  }
+
+  .social {
+    display: flex; /* Para centralizar os ícones de redes sociais */
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  .socialmedia img {
+    height: 30px; /* Ajusta o tamanho dos ícones */
+  }
+
+  .copy {
+    margin-top: 20px;
+    font-size: 0.8em;
+  }
+}
+
+/* Ajustes adicionais para tablets em modo paisagem (largura maior que smartphones) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    width: min(900px, 96%); /* Ajusta a largura do container */
+    padding: 30px 0;
+  }
+
+  .hero {
+    grid-template-columns: 1fr 350px; /* Ajusta o tamanho da coluna da imagem */
+    gap: 30px;
+  }
+
+  h1 {
+    font-size: 3em;
+  }
+
+  .hero-portrait {
+    height: 380px;
+  }
+
+  .cards {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Ajusta os cards */
+  }
+
+  .contact {
+    grid-template-columns: 1fr 350px; /* Ajusta o formulário */
+    gap: 30px;
+  }
+
+  .contact iframe {
+    height: 400px; /* Altura maior para o mapa */
+  }
+
+  .contact-form {
+    padding: 18px;
+  }
+
+  .logo img {
+    margin-left: 20px; /* Mantém a logo um pouco à esquerda em tablets */
+  }
+
+  .rightpad {
+    padding-right: 20px;
+  }
+}
